@@ -28,4 +28,11 @@
             document.getElementById("inputYear").value = "";
             document.getElementById("inputActors").value = "";
         }
- 
+        function removeMovie() {
+            var list = document.getElementById("movieList");
+            var checkedBoxes = document.querySelectorAll("input[type='checkbox']:checked");
+            for (var i = 0; i < checkedBoxes.length; i++) {
+                var liToRemove = checkedBoxes[i].parentNode;
+                list.removeChild(liToRemove);
+            }
+        }
